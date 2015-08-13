@@ -14,6 +14,4 @@ public class FruitGenerator extends Generator <String> {
 	    return fruits.get(new Random().nextInt(fruits.size()));
 	}
 	
-	//public addList
-	
 }
