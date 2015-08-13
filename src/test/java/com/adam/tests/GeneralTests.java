@@ -12,7 +12,7 @@ import com.adam.patterns.builder.FruitGeneratorBuilder;
 import com.adam.patterns.builder.LongGeneratorBuilder;
 import com.adam.patterns.factory.GenericFactory;
 
-public class getLongGeneratorFatoryTest {
+public class GeneralTests {
 
 	@Test
 	public void getInstanceTest() throws Exception {
