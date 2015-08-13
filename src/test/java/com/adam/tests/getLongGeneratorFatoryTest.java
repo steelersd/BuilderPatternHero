@@ -1,14 +1,16 @@
 package com.adam.tests;
 
+import static org.hamcrest.CoreMatchers.instanceOf;
+import static org.junit.Assert.assertThat;
+
 import org.junit.Test;
 
 import com.adam.generators.FruitGenerator;
 import com.adam.generators.LongGenerator;
+import com.adam.generators.clients.GeneratorClient;
+import com.adam.patterns.builder.FruitGeneratorBuilder;
 import com.adam.patterns.builder.LongGeneratorBuilder;
 import com.adam.patterns.factory.GenericFactory;
-
-import static org.hamcrest.CoreMatchers.instanceOf;
-import static org.junit.Assert.assertThat;
 
 public class getLongGeneratorFatoryTest {
 
@@ -37,4 +39,25 @@ public class getLongGeneratorFatoryTest {
 		assertThat(generator.generate(), instanceOf(Long.class));
 	}	
 
+	@Test
+	public void longGeneratorClientTest() throws Exception {
+		LongGeneratorBuilder buider = new LongGeneratorBuilder();
+		LongGenerator generator = buider.create().leftLimit(20L).rightLimit(300L).build();
+		GeneratorClient<Long> client = new GeneratorClient<Long>();
+		client.setGenerator(generator);
+		client.displayGenerated();
+		assertThat(client.getGenerated(), instanceOf(Long.class));
+	}
+	
+	@Test
+	public void fruitGeneratorClientTest() throws Exception {
+		FruitGeneratorBuilder buider = new FruitGeneratorBuilder();
+		FruitGenerator generator = buider.create().build();
+		GeneratorClient<String> client = new GeneratorClient<String>();
+		client.setGenerator(generator);
+		client.displayGenerated();
+		assertThat(client.getGenerated(), instanceOf(String.class));
+	}	
+	
+	
 }

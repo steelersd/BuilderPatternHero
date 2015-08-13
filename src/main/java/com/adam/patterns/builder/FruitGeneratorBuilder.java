@@ -8,7 +8,7 @@ public class FruitGeneratorBuilder {
 	
 	public FruitGeneratorBuilder () {
 		try {
-			generator = GenericFactory.getInstance(FruitGenerator.class);
+			generator = GenericFactory.getInstance(FruitGenerator.class); // No public constructor available
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -8,7 +8,7 @@ public class LongGeneratorBuilder {
 	
 	public LongGeneratorBuilder () {
 		try {
-			generator = GenericFactory.getInstance(LongGenerator.class);
+			generator = GenericFactory.getInstance(LongGenerator.class); // No public constructor available
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

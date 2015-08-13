@@ -8,7 +8,7 @@ public class IntGeneratorBuilder {
 	
 	public IntGeneratorBuilder () {
 		try {
-			generator = GenericFactory.getInstance(IntGenerator.class);
+			generator = GenericFactory.getInstance(IntGenerator.class); // No public constructor available
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
